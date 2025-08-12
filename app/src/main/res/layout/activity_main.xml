@@ -1,0 +1,95 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Total Tuition Amount"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/totalFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Enter total amount"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you a scholarship student?"
+            android:layout_marginTop="20dp"/>
+
+        <RadioGroup
+            android:id="@+id/scholarshipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/noScholarship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No"/>
+            <RadioButton
+                android:id="@+id/yesScholarship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/scholarshipLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/scholarshipType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/scholarship_options" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/calculateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate Installments"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/resultFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="1st Installment: 0"/>
+
+        <TextView
+            android:id="@+id/resultSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2nd Installment: 0"/>
+
+        <TextView
+            android:id="@+id/resultThird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3rd Installment: 0"/>
+
+        <TextView
+            android:id="@+id/resultTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Total Amount: 0"/>
+    </LinearLayout>
+</ScrollView>

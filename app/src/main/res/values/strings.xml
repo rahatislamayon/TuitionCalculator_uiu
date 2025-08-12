@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tuition Calculator</string>
+
+    <string-array name="scholarship_options">
+        <item>25% Scholarship</item>
+        <item>50% Scholarship</item>
+        <item>100% Scholarship</item>
+    </string-array>
+</resources>
