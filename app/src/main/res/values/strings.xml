@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Tuition Calculator</string>
 
-    <string-array name="scholarship_options">
-        <item>25% Scholarship</item>
-        <item>50% Scholarship</item>
-        <item>100% Scholarship</item>
-    </string-array>
+    <!-- activity_main.xml -->
+
+    <!-- item_installment.xml -->
+    <string name="placeholder_installment_name">1st Installment</string>
+    <string name="placeholder_installment_amount">৳ 45000</string>
+    <string name="label_paid">Paid</string>
 </resources>

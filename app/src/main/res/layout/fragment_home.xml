@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- HERO CARD -->
+        <!-- ══════════════════════════════════════ -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_home">
+
+                <!-- Large watermark logo -->
+                <ImageView
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-50dp"
+                    android:layout_marginBottom="-50dp"
+                    android:alpha="0.12"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_tuition_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <!-- Tag badge -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:background="@drawable/bg_rounded_primary"
+                        android:backgroundTint="#9C27B0"
+                        android:letterSpacing="0.08"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="5dp"
+                        android:text="EMPOWERING EDUCATION"
+                        android:textColor="#F3E5F5"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:lineSpacingExtra="-2dp"
+                        android:text="Plan your\nfuture with\nprecision."
+                        android:textColor="@android:color/white"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:alpha="0.85"
+                        android:text="Estimate, track, and manage your university tuition fees across 19+ Bangladeshi institutions."
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp" />
+
+                    <!-- Stats row inside hero -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20+"
+                                android:textColor="@android:color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Universities"
+                                android:textColor="@android:color/white"
+                                android:alpha="0.7"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textColor="@android:color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Installments"
+                                android:textColor="@android:color/white"
+                                android:alpha="0.7"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100%"
+                                android:textColor="@android:color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Free to use"
+                                android:textColor="@android:color/white"
+                                android:alpha="0.7"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- CTA Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnCalculate"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_rounded_surface"
+                            android:backgroundTint="@android:color/white"
+                            android:text="⚡ Calculate"
+                            android:textAllCaps="false"
+                            android:textColor="#4A148C"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:elevation="4dp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnLearnMore"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_rounded_surface"
+                            android:backgroundTint="#3A000000"
+                            android:text="Learn More"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- POPULAR UNIVERSITIES -->
+        <!-- ══════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="24dp"
+                android:background="?attr/colorPrimary"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Popular Universities"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:id="@+id/tvViewAllUniversities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All →"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary" />
+        </LinearLayout>
+
+        <!-- Horizontal scroll for universities -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:layout_marginStart="-20dp"
+            android:layout_marginEnd="-20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- NSU Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainerLowest"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="14dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardBackgroundColor="?attr/colorPrimaryFixed"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/tvNsuFallback"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="N"
+                                    android:textColor="?attr/colorOnPrimaryFixed"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                                <ImageView
+                                    android:id="@+id/ivNsuLogo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="4dp"
+                                    android:scaleType="fitCenter"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NSU"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="North South"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:layout_marginTop="2dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="৳ 8,000/per credit"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- UIU Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainerLowest"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="14dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardBackgroundColor="?attr/colorTertiaryContainer"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/tvUiuFallback"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="U"
+                                    android:textColor="?attr/colorOnTertiaryContainer"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                                <ImageView
+                                    android:id="@+id/ivUiuLogo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="4dp"
+                                    android:scaleType="fitCenter"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UIU"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="United International"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:layout_marginTop="2dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="৳ 6,500/per credit"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- AIUB Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainerLowest"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="14dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardBackgroundColor="?attr/colorSecondaryContainer"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/tvAiubFallback"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="A"
+                                    android:textColor="?attr/colorOnSecondaryContainer"
+                                    android:gravity="center"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                                <ImageView
+                                    android:id="@+id/ivAiubLogo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="4dp"
+                                    android:scaleType="fitCenter"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AIUB"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="American International"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:layout_marginTop="2dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="৳ 4,500/per credit"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- FEATURE CARDS SECTION -->
+        <!-- ══════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+            <View
+                android:layout_width="4dp"
+                android:layout_height="24dp"
+                android:background="?attr/colorTertiary"
+                android:layout_marginEnd="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore Features"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <!-- Feature 1: Smart Calculator -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_calculator">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-30dp"
+                    android:layout_marginBottom="-30dp"
+                    android:alpha="0.12"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_tuition_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🧮"
+                        android:textSize="32sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart Calculator"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Input your credits and scholarships to get an exact breakdown of your semester costs."
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@android:color/white"
+                        android:alpha="0.85" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Feature 2: Track Costs -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_payments">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end|top"
+                    android:layout_marginEnd="-30dp"
+                    android:layout_marginTop="-30dp"
+                    android:alpha="0.1"
+                    android:src="@android:drawable/ic_menu_recent_history"
+                    android:scaleType="fitCenter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊"
+                        android:textSize="32sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Track Costs"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Keep a detailed log of all previous payments and upcoming dues across semesters."
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@android:color/white"
+                        android:alpha="0.85"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvGoToHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Go to History →"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Feature 3: Compare Fees -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_compare">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-30dp"
+                    android:layout_marginBottom="-30dp"
+                    android:alpha="0.1"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    android:scaleType="fitCenter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚖️"
+                        android:textSize="32sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Compare Fees"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Compare tuition structures across 19+ private universities side-by-side."
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@android:color/white"
+                        android:alpha="0.85"
+                        android:layout_marginBottom="16dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnStartComparing"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_rounded_surface"
+                        android:backgroundTint="@android:color/white"
+                        android:text="⚡ Start Comparing"
+                        android:textAllCaps="false"
+                        android:textColor="#1a237e"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:elevation="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

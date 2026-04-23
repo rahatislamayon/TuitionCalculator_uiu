@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:clipToPadding="false">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/paymentsContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- HERO HEADER -->
+        <!-- ══════════════════════════════════════ -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_payments">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-40dp"
+                    android:layout_marginBottom="-40dp"
+                    android:alpha="0.12"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_tuition_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_rounded_primary"
+                        android:backgroundTint="#FF7043"
+                        android:letterSpacing="0.08"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="5dp"
+                        android:text="PAYMENT TRACKER"
+                        android:textColor="#FBE9E7"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Final Tuition"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/white"
+                        android:alpha="0.8" />
+
+                    <TextView
+                        android:id="@+id/finalPayableAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="৳ 0"
+                        android:textSize="42sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <!-- Scholarship badge -->
+                        <TextView
+                            android:id="@+id/scholarshipApplied"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✨ 0% Scholarship"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/bg_rounded_surface"
+                            android:backgroundTint="#3AFFFFFF"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="6dp"
+                            android:layout_marginEnd="8dp" />
+
+                        <!-- Base fee badge -->
+                        <TextView
+                            android:id="@+id/baseFeeAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Base: ৳ 0"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/bg_rounded_surface"
+                            android:backgroundTint="#3AFFFFFF"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="6dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- INSTALLMENTS SECTION -->
+        <!-- ══════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+            <View
+                android:layout_width="4dp"
+                android:layout_height="24dp"
+                android:background="?attr/colorPrimary"
+                android:layout_marginEnd="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Installments"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/installmentsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/item_installment"
+            android:layout_marginBottom="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- STUDENT PERKS CARD -->
+        <!-- ══════════════════════════════════════ -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_button">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-20dp"
+                    android:layout_marginBottom="-20dp"
+                    android:alpha="0.12"
+                    android:src="@drawable/ic_tuition_logo"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💳 Student Perks"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/white"
+                        android:alpha="0.8"
+                        android:layout_marginBottom="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unlock 0% Interest EMI\nwith Bank Partners"
+                        android:textSize="20sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textColor="@android:color/white"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvViewPartners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Partners →"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Generate Quote Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGenerateQuote"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="📄 Generate Official Quote"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_gradient_button"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Disclaimer -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:strokeWidth="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Fees are estimated based on 2024 academic year. Final amounts may vary by department."
+                android:textSize="12sp"
+                android:padding="16dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+        </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- ══════════════════════════════════════ -->
+        <!-- EMPTY STATE -->
+        <!-- ══════════════════════════════════════ -->
+        <LinearLayout
+            android:id="@+id/emptyState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="40dp"
+            android:visibility="visible"
+            tools:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@android:drawable/ic_menu_today"
+                android:alpha="0.2"
+                android:layout_marginBottom="24dp"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Payment Data"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the Calculator to generate your first installment plan."
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginBottom="32dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>

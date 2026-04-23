@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode: Stitch Deep Indigo & Lavender Premium Palette -->
+    <color name="primary">#bac3ff</color>
+    <color name="primary_container">#293ca0</color>
+    <color name="on_primary_container">#dee0ff</color>
+    <color name="surface">#121318</color>
+    <color name="surface_container_lowest">#0d0e13</color>
+    <color name="surface_container_low">#1a1b22</color>
+    <color name="surface_container">#1e1f27</color>
+    <color name="surface_container_high">#282931</color>
+    <color name="surface_container_highest">#33343c</color>
+    <color name="on_surface">#e3e1ea</color>
+    <color name="on_surface_variant">#c5c5d4</color>
+
+    <color name="outline">#8f909e</color>
+    <color name="outline_variant">#454652</color>
+
+    <color name="tertiary_fixed">#fad7ff</color>
+    <color name="on_tertiary_fixed">#291231</color>
+</resources>

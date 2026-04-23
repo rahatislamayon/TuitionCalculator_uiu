@@ -1,95 +1,42 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="?attr/colorSurface"
+        android:paddingTop="4dp"
+        android:paddingBottom="8dp"
+        app:itemActiveIndicatorStyle="@style/Widget.TuitionCalc.BottomNav.ActiveIndicator"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/bottom_nav_color_state"
+        app:itemPaddingTop="10dp"
+        app:itemPaddingBottom="10dp"
+        app:itemTextAppearanceActive="@style/TextAppearance.TuitionCalc.BottomNav.Active"
+        app:itemTextAppearanceInactive="@style/TextAppearance.TuitionCalc.BottomNav.Inactive"
+        app:itemTextColor="@color/bottom_nav_color_state"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter Total Tuition Amount"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-
-        <EditText
-            android:id="@+id/totalFee"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:hint="Enter total amount"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Are you a scholarship student?"
-            android:layout_marginTop="20dp"/>
-
-        <RadioGroup
-            android:id="@+id/scholarshipGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/noScholarship"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="No"/>
-            <RadioButton
-                android:id="@+id/yesScholarship"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes"/>
-        </RadioGroup>
-
-        <LinearLayout
-            android:id="@+id/scholarshipLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <Spinner
-                android:id="@+id/scholarshipType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/scholarship_options" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/calculateBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calculate Installments"
-            android:layout_marginTop="20dp"/>
-
-        <TextView
-            android:id="@+id/resultFirst"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="1st Installment: 0"/>
-
-        <TextView
-            android:id="@+id/resultSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2nd Installment: 0"/>
-
-        <TextView
-            android:id="@+id/resultThird"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3rd Installment: 0"/>
-
-        <TextView
-            android:id="@+id/resultTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Total Amount: 0"/>
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
