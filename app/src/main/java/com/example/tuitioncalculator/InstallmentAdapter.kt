@@ -1,17 +1,4 @@
-this is the data of 2026 Bangladeshi University Per Credit Prices here is the Google docs link:
-https://docs.google.com/document/d/1VTON_-wu1BQ2XzD0LGzbGTFSOvoMc99lEMgNm26pRR4/edit?usp=sharing
 
-update all data and when user clicks this button it shows all Information About the University. 
-
-item_university.xml
- 
-this is the data of 2026 Bangladeshi University Per Credit Prices here is the Google docs link:
-https://docs.google.com/document/d/1VTON_-wu1BQ2XzD0LGzbGTFSOvoMc99lEMgNm26pRR4/edit?usp=sharing
-
-update all data and when user clicks this button it shows all Information About the University. 
-
-item_university.xml
- 
 package com.example.tuitioncalculator
 
 import android.view.LayoutInflater

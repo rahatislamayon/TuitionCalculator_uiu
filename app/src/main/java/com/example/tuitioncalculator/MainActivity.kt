@@ -55,10 +55,7 @@ class MainActivity : AppCompatActivity() {
                 val item = menu.getItem(i)
                 if (item.itemId == destination.id) {
                     if (!item.isChecked) {
-                        // Temporarily remove listener to avoid recursive navigation
-                        binding.bottomNavigation.setOnItemSelectedListener(null)
                         item.isChecked = true
-                        setupBottomNavigation()
                     }
                     break
                 }

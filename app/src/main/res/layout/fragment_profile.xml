@@ -67,24 +67,52 @@
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="72dp"
-                            android:layout_height="72dp"
-                            app:cardCornerRadius="36dp"
-                            app:cardElevation="0dp"
-                            app:strokeWidth="2dp"
-                            app:strokeColor="#4DFFFFFF"
-                            app:cardBackgroundColor="#26FFFFFF"
-                            android:layout_marginEnd="18dp">
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="18dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false">
 
-                            <ImageView
-                                android:id="@+id/ivProfileImage"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@android:drawable/ic_menu_myplaces"
-                                app:tint="@android:color/white"
-                                android:padding="16dp" />
-                        </com.google.android.material.card.MaterialCardView>
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="36dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="3dp"
+                                app:strokeColor="#FFFFFF"
+                                app:cardBackgroundColor="#26FFFFFF"
+                                android:layout_margin="4dp">
+
+                                <ImageView
+                                    android:id="@+id/ivProfileImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@android:drawable/ic_menu_myplaces" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/ivEditProfile"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                app:cardCornerRadius="14dp"
+                                app:cardElevation="4dp"
+                                app:strokeWidth="2dp"
+                                app:strokeColor="#FFFFFF"
+                                app:cardBackgroundColor="?attr/colorPrimary"
+                                android:layout_gravity="bottom|end"
+                                android:clickable="true"
+                                android:focusable="true">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@android:drawable/ic_menu_edit"
+                                    app:tint="#FFFFFF"
+                                    android:padding="6dp" />
+                            </com.google.android.material.card.MaterialCardView>
+                        </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -121,14 +149,6 @@
                                 android:textColor="@android:color/white"
                                 android:textStyle="bold" />
                         </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/ivEditProfile"
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@android:drawable/ic_menu_edit"
-                            app:tint="@android:color/white"
-                            android:alpha="0.7" />
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>

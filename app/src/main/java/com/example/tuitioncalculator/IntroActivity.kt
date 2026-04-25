@@ -15,6 +15,8 @@ import com.example.tuitioncalculator.databinding.ActivityIntroBinding
 class IntroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityIntroBinding
+    private val handler = Handler(Looper.getMainLooper())
+    private var splashRunnable: Runnable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +39,7 @@ class IntroActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
         val hasSeenIntro = prefs.getBoolean("has_seen_intro", false)
         
-        Handler(Looper.getMainLooper()).postDelayed({
+        splashRunnable = Runnable {
             if (hasSeenIntro) {
                 // If they've seen the intro, go straight to Main
                 startActivity(Intent(this, MainActivity::class.java))
@@ -54,7 +56,9 @@ class IntroActivity : AppCompatActivity() {
                     }
                     .start()
             }
-        }, 2200)
+        }
+        
+        splashRunnable?.let { handler.postDelayed(it, 2200) }
     }
     
     private fun finishIntro() {
@@ -64,5 +68,10 @@ class IntroActivity : AppCompatActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        splashRunnable?.let { handler.removeCallbacks(it) }
     }
 }
