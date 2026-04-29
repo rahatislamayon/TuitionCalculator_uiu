@@ -1,6 +1,7 @@
 package com.example.tuitioncalculator
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -36,6 +37,19 @@ class MainActivity : AppCompatActivity() {
             .build()
     }
 
+    // Auth screen IDs for visibility management
+    private val authScreenIds = setOf(
+        R.id.loginFragment,
+        R.id.signupFragment,
+        R.id.forgotPasswordFragment
+    )
+
+    // Screens that should show the back button in the top app bar
+    private val backButtonScreenIds = setOf(
+        R.id.signupFragment,
+        R.id.forgotPasswordFragment
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -48,8 +62,27 @@ class MainActivity : AppCompatActivity() {
         // Wire up bottom nav with custom transition animations
         setupBottomNavigation()
 
+        // Back button in top app bar
+        binding.btnBack.setOnClickListener {
+            navController.navigateUp()
+        }
+
         // Keep the bottom nav indicator in sync when back-stack changes
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            // Hide bottom navigation on auth screens
+            if (destination.id in authScreenIds) {
+                binding.bottomNavigation.visibility = View.GONE
+            } else {
+                binding.bottomNavigation.visibility = View.VISIBLE
+            }
+
+            // Show/hide back button in the top app bar
+            if (destination.id in backButtonScreenIds) {
+                binding.btnBack.visibility = View.VISIBLE
+            } else {
+                binding.btnBack.visibility = View.GONE
+            }
+
             val menu = binding.bottomNavigation.menu
             for (i in 0 until menu.size()) {
                 val item = menu.getItem(i)
@@ -62,21 +95,27 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Handle device back button: if not on Home, go to Home with backward animation
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val currentDest = navController.currentDestination?.id
-                if (currentDest != R.id.homeFragment) {
-                    // Navigate back to Home with reverse transition
+                
+                if (currentDest == R.id.homeFragment) {
+                    // On Home already — let the system default handle it (exit)
+                    isEnabled = false
+                    onBackPressedDispatcher.onBackPressed()
+                    isEnabled = true // Re-enable for future
+                } else if (authScreenIds.contains(currentDest)) {
+                    // On Auth screens, let NavController handle back stack normally
+                    isEnabled = false
+                    onBackPressedDispatcher.onBackPressed()
+                    isEnabled = true // Re-enable for future
+                } else {
+                    // Deep in the logged-in app — return to Home
                     try {
                         navController.navigate(R.id.homeFragment, null, backToHomeNavOptions)
                     } catch (e: IllegalArgumentException) {
                         binding.bottomNavigation.selectedItemId = R.id.homeFragment
                     }
-                } else {
-                    // On Home already — let the system default handle it (exit)
-                    isEnabled = false
-                    onBackPressedDispatcher.onBackPressed()
                 }
             }
         })

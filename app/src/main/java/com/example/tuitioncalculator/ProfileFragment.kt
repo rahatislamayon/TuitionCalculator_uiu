@@ -14,6 +14,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.tuitioncalculator.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -49,6 +51,8 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
+    private val authViewModel: com.example.tuitioncalculator.viewmodel.AuthViewModel by activityViewModels()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
@@ -60,6 +64,16 @@ class ProfileFragment : Fragment() {
         
         binding.ivEditProfile.setOnClickListener {
             showEditDialog()
+        }
+
+        // Setup Sign Out
+        val llSignOut = view.findViewById<View>(R.id.llSignOut)
+        llSignOut?.setOnClickListener {
+            authViewModel.signout()
+            val navOptions = androidx.navigation.NavOptions.Builder()
+                .setPopUpTo(R.id.homeFragment, true)
+                .build()
+            findNavController().navigate(R.id.loginFragment, null, navOptions)
         }
     }
     

@@ -60,6 +60,11 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="ShapeAppearance.TuitionCalc.CircleLogo" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="TextAppearance.TuitionCalc.BottomNav.Active" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>

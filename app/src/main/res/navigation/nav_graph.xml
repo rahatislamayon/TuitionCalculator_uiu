@@ -3,16 +3,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <!-- ═══════════════════════════════════════════════════ -->
-    <!-- HOME FRAGMENT — start destination                  -->
+    <!-- AUTH FRAGMENTS                                     -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.tuitioncalculator.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+            
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signupFragment" />
+            
+        <action
+            android:id="@+id/action_login_to_forgotPassword"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.tuitioncalculator.SignupFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_signup">
+        
+        <action
+            android:id="@+id/action_signup_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+            
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.tuitioncalculator.ForgotPasswordFragment"
+        android:label="Forgot Password"
+        tools:layout="@layout/fragment_forgot_password">
+        
+        <action
+            android:id="@+id/action_forgotPassword_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- HOME FRAGMENT                                      -->
     <!-- ═══════════════════════════════════════════════════ -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.tuitioncalculator.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_home_to_universities"

@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Graduation Cap -->
+    <path
+        android:fillColor="#3F51B5"
+        android:pathData="M12,3L1,9L4,10.63V17L12,21L20,17V10.63L23,9M12,18.7L5.8,15.6V11.6L12,15L18.2,11.6V15.6M12,5.2L18.8,8.9L12,12.6L5.2,8.9L12,5.2Z" />
+    <!-- Calculator details overlaid -->
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M8,11h2v2H8V11zm4,0h2v2h-2V11zm4,0h2v2h-2V11zm-8,4h2v2H8v-2zm4,0h2v2h-2v-2zm4,0h2v2h-2v-2z" />
+</vector>

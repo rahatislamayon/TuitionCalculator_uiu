@@ -267,7 +267,6 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter amount in ৳"
                     app:boxBackgroundColor="?attr/colorSurfaceContainerLow"
                     app:boxCornerRadiusTopStart="16dp"
                     app:boxCornerRadiusTopEnd="16dp"
@@ -275,17 +274,21 @@
                     app:boxCornerRadiusBottomEnd="16dp"
                     app:boxStrokeWidth="1dp"
                     app:boxStrokeColor="?attr/colorOutlineVariant"
-                    app:startIconDrawable="@android:drawable/ic_menu_manage"
-                    app:startIconTint="?attr/colorPrimary"
+                    app:hintEnabled="false"
                     android:layout_marginBottom="20dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/totalFee"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:hint="Enter amount in ৳"
                         android:inputType="numberDecimal"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:padding="16dp"
+                        android:drawableStart="@android:drawable/ic_menu_manage"
+                        android:drawablePadding="12dp"
+                        android:drawableTint="?attr/colorPrimary" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Divider -->
@@ -338,7 +341,6 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Scholarship % (e.g. 25)"
                     app:boxCornerRadiusTopStart="16dp"
                     app:boxCornerRadiusTopEnd="16dp"
                     app:boxCornerRadiusBottomStart="16dp"
@@ -346,14 +348,18 @@
                     app:boxBackgroundColor="?attr/colorSurfaceContainerLow"
                     app:boxStrokeWidth="1dp"
                     app:boxStrokeColor="?attr/colorOutlineVariant"
-                    app:startIconDrawable="@android:drawable/btn_star_big_on"
-                    app:startIconTint="?attr/colorTertiary">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/scholarship"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal" />
+                        android:hint="Enter Scholarship %"
+                        android:inputType="numberDecimal"
+                        android:padding="16dp"
+                        android:drawableStart="@android:drawable/btn_star_big_on"
+                        android:drawablePadding="12dp"
+                        android:drawableTint="?attr/colorTertiary" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

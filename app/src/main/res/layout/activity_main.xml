@@ -4,8 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAF9FE"
     tools:context=".MainActivity">
 
+    <!-- ══════════════════════════════════════ -->
+    <!-- TOP APP BAR                           -->
+    <!-- ══════════════════════════════════════ -->
+    <LinearLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <!-- Back button (hidden by default, shown on sub-screens) -->
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back"
+                android:visibility="gone"
+                android:layout_marginEnd="8dp"
+                android:padding="2dp" />
+
+            <!-- Branding logo -->
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_tuition_logo"
+                android:contentDescription="App Logo"
+                android:layout_marginEnd="8dp" />
+
+            <!-- App title -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Tuition Calculator"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Help button -->
+            <ImageView
+                android:id="@+id/btnHelp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_help_outline"
+                android:contentDescription="Help"
+                android:padding="2dp" />
+        </LinearLayout>
+
+        <!-- Thin divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/outline_variant"
+            android:alpha="0.5" />
+    </LinearLayout>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- FRAGMENT CONTAINER                    -->
+    <!-- ══════════════════════════════════════ -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -15,9 +87,13 @@
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph" />
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:navGraph="@navigation/nav_graph"
+        tools:layout="@layout/fragment_home" />
 
+    <!-- ══════════════════════════════════════ -->
+    <!-- BOTTOM NAVIGATION                     -->
+    <!-- ══════════════════════════════════════ -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
