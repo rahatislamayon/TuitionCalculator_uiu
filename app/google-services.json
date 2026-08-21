@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "740467381978",
+    "project_number": "",
     "project_id": "tuition-calculator-2026x",
     "storage_bucket": "tuition-calculator-2026x.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:740467381978:android:76ffee8584d51a975c77e3",
+        "mobilesdk_app_id": "
         "android_client_info": {
-          "package_name": "com.example.tuitioncalculator"
+          "package_name": ""
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "you're 🗝"
+          "current_key": " "
         }
       ],
       "services": {
